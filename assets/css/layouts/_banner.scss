@@ -1,0 +1,19 @@
+
+
+.banner-content{
+    color:$white;
+    h2 {
+        font-size: 45px;
+        text-transform: uppercase;
+        line-height: 20px;
+    }
+    p {
+        max-width: 500px;
+        margin: 30px auto;
+        font-size:$font_size;
+    }
+    a{
+        margin-right: 5px;
+    }
+}
+

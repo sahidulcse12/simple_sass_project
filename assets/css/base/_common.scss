@@ -1,0 +1,135 @@
+@import "color";
+
+/*browser reset code*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$font_size: 18px;
+
+.fix:before,.fix:after{
+    clear:both;
+    content: "";
+    display: block;
+}
+
+.main{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+    color:$black;
+    transition: .3s;
+}
+
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+ul{
+    list-style-type: none;
+}
+
+/*banner area*/
+.bg{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position:relative;
+    z-index: 2;
+    &:before{
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        opacity: .75;
+        z-index: -1;
+    }
+}
+
+/*Button*/
+.btn{
+    font-size:$font_size;
+    display: inline-block;
+    color:$white;
+    padding:10px 40px;
+    text-transform: capitalize;
+    transition: 1s;
+    &.box-btn{
+        background-color:$primary_color;
+        border-radius: 5px;
+        &:hover{
+            background-color:$black;           
+        }
+    }
+    &.border-btn{
+        border:2px solid $primary_color;
+        padding:8px 40px;
+        border-radius: 5px;
+        &:hover{
+            background-color:$black;
+            color:$white;
+        }
+    }
+}
+
+/*Section about-area*/
+
+.section-title {
+    h4 {
+        font-size: 45px;
+        text-transform: uppercase;
+        padding-bottom: 20px;
+        margin-bottom:20px;
+        position: relative;
+        display: inline-block;
+        &:before{
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 50%;
+            width: 40px;
+            height: 2px;
+            background: tomato;
+            transform: translate(-50%);
+        }
+    }
+    p{
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+
+/* Margin and Padding */
+
+@for $i from 1 through 10{
+    .pt-#{$i*10}{
+        padding-top:$i*10px;
+    }
+    .pb-#{$i*10}{
+        padding-bottom:$i*10px;
+    }
+    .mt-#{$i*10}{
+        margin-top:$i*10px;
+    }
+    .mb-#{$i*10}{
+        margin-bottom:$i*10px;
+    }
+}
+
+$list:left,center,right,justify;
+
+@each $i in $list {
+    .text-#{$i}{
+        text-align: $i;
+    }
+}
